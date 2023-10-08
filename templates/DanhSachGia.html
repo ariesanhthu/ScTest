@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% block title %}
+    ĐĂNG NHẬP
+{% endblock %}
+
+{% block content %}
+
+<div class="input-group mt-3">
+    <form class="form-inline">
+        <input class="form-control col-10" type="search" placeholder="Tìm kiếm" aria-label="Search"/>
+        <button id="search-button" type="button" class="btn btn-primary col-2" type="submit">
+        <i class="fas fa-search"></i>
+        </button>
+    </form>
+</div>
+
+<!-- show list product here-->
+<div class="row align-items-center w-100 container-fluid">
+    
+    <!-- item of PRODUCTS -->
+        <div class="card mt-2" style="height: 80px; width: 230px;">
+            <div class="ml-2 row w-100 h-100">
+                <div class="col float-left align-middle h-100">
+                    <div class="d-flex flex-wrap align-items-center justify-content-center h-100">
+                        <!-- LINK IMG -->
+                        <img src="{{url_for('static', filename='images/carton.jpeg')}}"     
+                        class="rounded img-thumbnail" alt="..." style="height: 60px;">
+                    </div>
+                </div>
+                
+                <div class="col float-right">
+                    <div class="card-body p-0 text-center h-100" style="color: black !important;">
+                        <div class="d-flex flex-wrap align-items-left justify-content-start h-100 pt-2">
+                            <!-- name of product -->
+                            <h6 class="card">Bìa Carton</h6>
+                            <!-- price of produc -->
+                            <h6 class="card-title">2000 VND</h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+</div>
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block title %}
+    ĐẶT LỊCH BÁN
+{% endblock %}
+
+{% block content %}
+
+<div class="input-group clockpicker">
+    <input type="text" class="form-control" value="19:00">
+    <span class="input-group-addon">
+        <span class="glyphicon glyphicon-time"></span>
+    </span>
+</div>
+<script type="text/javascript">
+    $('.clockpicker').clockpicker({
+        placement: 'bottom',
+        align: 'left',
+        donetext: 'Done'
+    });
+    </script>
+
+{% endblock %}
