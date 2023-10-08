@@ -4,19 +4,72 @@
 {% endblock %}
 
 {% block content %}
+<!-- form -->
+    <form action="#" method="post">
 
-<div class="input-group clockpicker">
-    <input type="text" class="form-control" value="19:00">
-    <span class="input-group-addon">
-        <span class="glyphicon glyphicon-time"></span>
-    </span>
-</div>
-<script type="text/javascript">
-    $('.clockpicker').clockpicker({
-        placement: 'bottom',
-        align: 'left',
-        donetext: 'Done'
-    });
-    </script>
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Địa chỉ</label>
+            <div class="col-sm-10">
+                <input
+                class="form-control"
+                id="locate"
+                type="text"
+                placeholder="Nhập địa chỉ của bạn"
+                name="locate"
+                    required
+                    />
+            </div>
+            <div class="col-12">
+                <!-- BẢN ĐỒ -->
+                <a href="{{url_for('map')}}" class="w-100 btn rounded">
+                    <div class="float-left ">
+                        <div class="row bg-light p-2 rounded flex d-flex align-items-center justify-content-center">
+                            <i class="fa-solid fa-map"></i>
+                            <h5 class="">Chọn vị trí</h5>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="dropdown form-group row col-12">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Chọn thời gian
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <a class="dropdown-item" href="#">6h-7h</a>
+              <a class="dropdown-item" href="#">7h-8h</a>
+              <a class="dropdown-item" href="#">8h-9h</a>
+            </div>
+        </div>
+        <!-- camera -->
+        <canvas id="canvas" style="width: 100px; height: auto;"></canvas>
+        <button id="start-camera">Start Camera</button>
+        <button id="click-photo">Click Photo</button>
+        <video id="video" width="320" height="240" autoplay></video>
+        
+    <button class="mt-3 btn btn--form text-white rounded bg-success col-12" type="submit" value="DangNhap">
+        Đặt lịch
+    </button>
+    </form>
+<script>
+    let camera_button = document.querySelector("#start-camera");
+    let video = document.querySelector("#video");
+    let click_button = document.querySelector("#click-photo");
+    let canvas = document.querySelector("#canvas");
+    var localstream;
+    camera_button.addEventListener('click', async function() {
+   	let stream = await navigator.mediaDevices.getUserMedia({ video: true, audio: false });
+	localstream = stream;
+    video.srcObject = stream;
+});
 
+click_button.addEventListener('click', function() {
+   	canvas.getContext('2d').drawImage(video, 0, 0, canvas.width, canvas.height);
+   	let image_data_url = canvas.toDataURL('image/jpeg');
+
+   	// data url of the image
+   	console.log(image_data_url);
+    localstream.getTracks()[0].stop();
+});
+</script>
 {% endblock %}

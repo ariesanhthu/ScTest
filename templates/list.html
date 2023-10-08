@@ -1,20 +1,43 @@
+{% extends 'base.html' %}
 {% block title %}
-List All Item
+    TRA CỨU GIÁ
 {% endblock %}
 {% block content %}
-        <table border="1px">
-            <thead>
-                <td><strong>ID</strong></td>
-                <td><strong>Name</strong></td>
-                <td><strong>Price</strong></td>
-                <td></td>
-            </thead>
+    <!--TÌM KIẾM  -->
+    <div class="input-group mt-3">
+        <form class="form-inline">
+            <input class="form-control col-10" type="search" placeholder="Tìm kiếm" aria-label="Search"/>
+            <button id="search-button" type="button" class="btn btn-primary col-2" type="submit">
+            <i class="fas fa-search"></i>
+            </button>
+        </form>
+    </div>
+    <!-- SEARCH -->
+    <div class="row align-items-center w-100 container-fluid">
+        {% for item in rows%}
+            <div class="card mt-2" style="height: 80px; width: 230px;">
+                <div class="ml-2 row w-100 h-100">
+                    <div class="col float-left align-middle h-100">
+                        <div class="d-flex flex-wrap align-items-center justify-content-center h-100">
+                            <!-- LINK IMG -->
+                            <img src="{{url_for('static', filename='images/carton.jpeg')}}"     
+                            class="rounded img-thumbnail" alt="..." style="height: 100%;">
+                        </div>
+                    </div>
+                    
+                    <div class="col float-right">
+                        <div class="card-body p-0 text-center h-100" style="color: black !important;">
+                            <div class="p-0 d-flex flex-wrap align-items-left justify-content-start h-100 pt-2">
+                                <!-- name of product -->
+                                <h6 class="card-title m-0">{{item["name"]}}</h6>
+                                <!-- price of produc -->
+                                <h6 class="card-title m-0">{{item["price"]}} VND</h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
 
-            {% for row in rows %}
-            <tr>
-                <td>{{ row["id"] }}</td>
-                <td>{{ row["name"] }}</td>
-                <td> {{ row["price"]}}</td>
-            {% endfor %}
-        </table>
+    </div>
 {% endblock %}

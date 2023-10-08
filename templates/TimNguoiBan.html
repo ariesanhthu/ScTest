@@ -2,20 +2,27 @@
 {% block title %}
     NGƯỜI BÁN GẦN ĐÂY
 {% endblock %}
-    <div class="container-fluid">
-        <div class="dropdown">
-            <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Chọn thời gian
-            <span class="caret"></span></button>
-            <ul class="dropdown-menu">
-              <input class="form-control" id="myInput" type="text" placeholder="Search..">
-              <li><a href="#">HTML</a></li>
-              <li><a href="#">CSS</a></li>
-              <li><a href="#">JavaScript</a></li>
-              <li><a href="#">jQuery</a></li>
-              <li><a href="#">Bootstrap</a></li>
-              <li><a href="#">Angular</a></li>
-            </ul>
-          </div>
-    </div>
 {% block content %}
+<div class="row align-items-center w-100 container-fluid">
+      <div class="card mt-2" style="height: fit-content; width: 300px;">
+          <div class="ml-2 row w-100 h-100">
+              <div class="col float-left align-middle h-100">
+                  <div class="d-flex flex-wrap align-items-center justify-content-center h-100">
+                      <!-- LINK IMG -->
+                      <img src="{{url_for('static', filename='images/carton.jpeg')}}"     
+                      class="rounded img-thumbnail" alt="..." style="height: 100%;">
+                  </div>
+              </div>
+              
+              <div class="col float-right">
+                  <div class="card-body p-0 text-center h-100" style="color: black !important;">
+                    <h6 class="card-title m-0 mt-1">Nguyễn Văn A</h6>
+                    <h6 class="card-title m-0">Trần Hưng Đạo</h6>
+                    <a href="#" class="btn mt-1 btn-primary">Nhận</a>
+                  </div>
+              </div>
+
+          </div>
+      </div>
+</div>
 {% endblock %}

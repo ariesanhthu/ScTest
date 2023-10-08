@@ -23,29 +23,45 @@
    </head>
    <body>
 
-    <!-- Navbar here -->
-    <nav class="navbar navbar-dark bg-dark">
-      <!-- brand name -->
-      <a class="navbar-brand" href="#">VEAI</a>
-        <div class="navbar-right">
-          <ul class="navbar-nav">
-            <!-- USER AREA -->
-            
-            <li class="nav-item">
-              <a class="nav-link" href="">Đăng nhập</a>
-            </li>
-            
-            <!-- END USER AREA -->
-          </ul>
-        </div>
-    </nav>
-    <!-- end navbar -->
-      <!-- MAIN CONTENT -->
-      <div class="container-fluid">
-
-        {% block content %}
-        {% endblock %}
-        
+     <!-- Navbar here -->
+     <nav class="navbar navbar-dark bg-dark">
+       <!-- brand name -->
+       <a class="navbar-brand" href="{{url_for('home_page')}}">VEAI</a>
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="{{url_for('home_page')}}"><i class="fa-solid fa-house"></i></a>
+          </li>
+        </ul>
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="{{url_for('DatLich')}}"><i class="fa-solid fa-box"></i></a>
+          </li>
+        </ul>
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="#"><i class="fa-solid fa-circle-user"></i></a>
+          </li>
+        </ul>
+         <div class="navbar-right">
+           <ul class="navbar-nav">
+             <!-- USER AREA -->
+             
+             <li class="nav-item">
+               <a class="nav-link" href="{{url_for('DangNhap')}}">Đăng nhập</a>
+              </li>
+              
+              
+              <!-- END USER AREA -->
+            </ul>
+          </div>
+     </nav>
+     <!-- end navbar -->
+     <!-- MAIN CONTENT -->
+     <div class="container-fluid">
+       
+       {% block content %}
+       {% endblock %}
+       
       </div>
       <!-- Future Content here -->
 
