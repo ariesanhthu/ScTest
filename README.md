@@ -11,8 +11,8 @@ Qua đó có thể thấy, việc tạo ra một nền tảng để kết nối 
 - Bản đồ để xác định vị trí của các đại lý ve chai gần người dùng.
 # Công nghệ sử dụng
 - Lập trình app Android.
-- Áp dụng   để nhận diện hình chụp từng loại rác
-- Bản đồ: 
+- Sử dụng Teachable Machine để áp dụng AI và ML vào nhận diện hình chụp từng loại rác: https://teachablemachine.withgoogle.com/train/image?fbclid=IwAR2248njZxJsSk2LQZqrS9krvbXePvuhspSVGS7rgEtbQo6g6TaqpeoXK7Q
+- Bản đồ: Sử dụng google map api
 # Hướng phát triển trong tương lai
 - Mở rộng app sang IOS
 - Thêm các chức năng mới dành cho người dùng: nhận thông báo, đánh giá sau mỗi lần giao dịch,...
