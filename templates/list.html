@@ -1,0 +1,20 @@
+{% block title %}
+List All Item
+{% endblock %}
+{% block content %}
+        <table border="1px">
+            <thead>
+                <td><strong>ID</strong></td>
+                <td><strong>Name</strong></td>
+                <td><strong>Price</strong></td>
+                <td></td>
+            </thead>
+
+            {% for row in rows %}
+            <tr>
+                <td>{{ row["id"] }}</td>
+                <td>{{ row["name"] }}</td>
+                <td> {{ row["price"]}}</td>
+            {% endfor %}
+        </table>
+{% endblock %}
