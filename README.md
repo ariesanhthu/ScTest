@@ -16,6 +16,7 @@ Qua đó có thể thấy, việc tạo ra một nền tảng để kết nối 
 # Hướng phát triển trong tương lai
 - Mở rộng app sang IOS
 - Thêm các chức năng mới dành cho người dùng: nhận thông báo, đánh giá sau mỗi lần giao dịch,...
+- Thêm phân loại pin và đề xuất những nơi thu gom pin hay workshop đổi pin lấy cây.
 # Cách sử dụng
 
 # Thông tin bổ sung
